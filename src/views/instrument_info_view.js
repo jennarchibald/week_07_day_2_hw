@@ -6,7 +6,7 @@ const InstrumentInfoView = function (div) {
 
 InstrumentInfoView.prototype.bindEvents = function () {
   PubSub.subscribe('InstrumentFamilies:instrument-data-found', (event) => {
-    console.log(event.detail);
+    // console.log(event.detail);
     this.clearHTML();
     this.render(event.detail);
   });
