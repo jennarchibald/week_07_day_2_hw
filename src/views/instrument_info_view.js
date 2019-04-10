@@ -23,7 +23,6 @@ InstrumentInfoView.prototype.render = function (data) {
 InstrumentInfoView.prototype.addHeading = function (headingText) {
   const heading = document.createElement('h3');
   heading.textContent = headingText;
-  heading.classList.add('instrument-info-heading');
   this.div.appendChild(heading);
 };
 
