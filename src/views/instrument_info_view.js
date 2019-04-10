@@ -6,23 +6,23 @@ const InstrumentInfoView = function (div) {
 
 InstrumentInfoView.prototype.bindEvents = function () {
   PubSub.subscribe('InstrumentFamilies:instrument-data-found', (event) => {
-    // console.log(event.detail);
     this.clearHTML();
     this.render(event.detail);
   });
 };
 
 InstrumentInfoView.prototype.render = function (data) {
-  this.addHeading(data.name);
+  this.addHeading(data.name, 'instrument-name-heading');
   this.addInfoParagraph(data.description);
-  this.addHeading('Instruments include:')
+  this.addHeading('Instruments include:', 'instrument-list-heading')
   const list = this.createListElement();
   this.addInstrumentsToList(list, data.instruments);
 };
 
-InstrumentInfoView.prototype.addHeading = function (headingText) {
+InstrumentInfoView.prototype.addHeading = function (headingText, headingClass) {
   const heading = document.createElement('h3');
   heading.textContent = headingText;
+  heading.classList.add(headingClass);
   this.div.appendChild(heading);
 };
 
