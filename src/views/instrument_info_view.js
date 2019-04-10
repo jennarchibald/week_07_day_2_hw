@@ -23,17 +23,20 @@ InstrumentInfoView.prototype.render = function (data) {
 InstrumentInfoView.prototype.addHeading = function (headingText) {
   const heading = document.createElement('h3');
   heading.textContent = headingText;
+  heading.classList.add('instrument-info-heading');
   this.div.appendChild(heading);
 };
 
 InstrumentInfoView.prototype.addInfoParagraph = function (paraText) {
   const paragraph = document.createElement('p');
+  paragraph.classList.add('instrument-info-paragraph');
   paragraph.textContent = paraText;
   this.div.appendChild(paragraph);
 };
 
 InstrumentInfoView.prototype.createListElement = function () {
   const list = document.createElement('ul');
+  list.classList.add('instrument-info-list');
   this.div.appendChild(list);
   return list;
 };
